@@ -4,7 +4,7 @@ import {
   Route,
   Switch,
 } from 'react-router-dom';
-import PageCharacter from '../TeamList/PageCharacter';
+import CharacterPage from '../TeamList/CharacterPage';
 import DetailPage from './DetailPage';
 
 export default function App() {
@@ -15,7 +15,7 @@ export default function App() {
           <Route
             path="/"
             exact
-            render={(routerProps) => <PageCharacter {...routerProps} />}
+            render={(routerProps) => <CharacterPage {...routerProps} />}
           />
           <Route
             path="/detail/:id"

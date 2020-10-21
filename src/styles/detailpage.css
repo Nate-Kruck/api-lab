@@ -1,0 +1,119 @@
+.wrapperbro {
+  position: relative;
+  perspective: 40em;
+  display: grid;
+  transform-style: preserve-3d;
+}
+
+.detailcard {
+  grid-area: 1 / 1;
+  height: 200px;
+  width: 420px;
+  transform: translateX(15px) rotateY(25deg) rotateX(10deg);
+  background: rgb(50, 122, 128);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 13px 20px 15px 25px;
+  color: #000;
+  text-transform: uppercase;
+  font-size: 40px;
+  font-weight: 800;
+  backface-visibility: hidden;
+  box-shadow: 0 10px 30px -3px rgba(0, 0, 0, .7);
+}
+
+h1 {
+  font-size: 60px;
+  font-weight: 900;
+  text-align: center;
+}
+
+h1 .spanbro {
+  background-color: rgba(0, 0, 0, .7);
+  border-radius: 10px;
+  padding-left: 15px;
+  padding-right: 15px;
+}
+
+.detailcard .enclosedbro {
+  background: #000;
+  line-height: 1;
+  color: rgb(50, 122, 128);
+  padding: 0;
+  margin-right: -88px;
+  display: inline-block;
+  transform: translateY(1px) translateX(-100px) scale(0.75);
+  transform-origin: right center;
+  border-radius: 10px;
+}
+
+.wrapperbro:before {
+  --bw: 7px;
+  grid-area: 1 / 1;
+  content: '';
+  backface-visibility: hidden;
+  height: 100%;
+  width: 100%;
+  margin-top: calc(-1 * var(--bw));
+  margin-left: calc(-1 * var(--bw));
+  background: transparent;
+  transform: 
+    translateX(-150px)
+    rotateY(-30deg)
+    rotateX(15deg)
+    scale(1.03);
+  pointer-events: none;
+  border: var(--bw) solid #000;
+  box-sizing: content-box;
+  border-radius: 10px;
+}
+
+.wrapperbro:hover > div, .wrapperbro:hover:before {
+  transform: none;
+}
+
+.wrapperbro > div, .wrapperbro::before {
+    will-change: transform;
+    transition: .5s
+  transform cubic-bezier(.25, .46, .45, 1);
+}
+
+body {
+  display: grid;
+  place-items: center;
+}
+
+img {
+  box-shadow: 5px 5px 20px 10px rgba(0, 0, 0, .8);
+}
+
+.textbro {
+  font-size: 22px;
+  display: flow-root;
+  width: 280px;
+  opacity: 0;
+  -webkit-transition: visibility 0s, opacity 0s linear; 
+ transition: visibility 0s, opacity 0s linear;
+}
+
+.textbro:hover {
+  visibility: visible;
+   -webkit-transition: visibility 0s, opacity 0.5s linear; 
+ transition: visibility 0s, opacity 0.8s linear;
+ opacity: 0.9;
+ cursor: pointer;
+}
+
+/* .hovermebro p {
+  font-size: 22px;
+  width: 200px;
+  opacity: 0.9;
+  visibility: visible;
+   -webkit-transition: visibility 1s, opacity 1s linear; 
+ transition: visibility 1s, opacity 1s linear;
+ transform: translate(8%, -50%);
+ position: absolute;
+} */
+
+
