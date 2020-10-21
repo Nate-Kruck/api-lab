@@ -22,7 +22,7 @@ export default class CharacterPage extends Component {
     const characterFilter = characters.map((character) => (
       <>
         <Link to={`/detail/${character.id}`} key={character.id}>
-          <li className={styles.card}>
+          <li key={character.id} className={styles.card}>
             <p>{character.name}</p>
             <div className={styles.bar}>
               <div className={styles.emptybar}>
