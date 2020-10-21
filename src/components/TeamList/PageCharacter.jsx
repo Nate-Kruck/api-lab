@@ -1,5 +1,9 @@
+/* eslint-disable react/jsx-key */
+/* eslint-disable max-len */
 import React, { Component } from 'react';
 import { getCharacters } from '../../api_fetch/api';
+import { Link } from 'react-router-dom';
+import styles from '../../styles/main.css';
 
 export default class PageCharacter extends Component {
 
@@ -16,9 +20,17 @@ export default class PageCharacter extends Component {
   render() {
     const { characters } = this.state;
     const characterFilter = characters.map(character => (
-      <li key={character.id}>
-        <h1>{character.name}</h1>
-      </li>
+      <Link to={`/detail/${character.id}`} key={character.id}>
+        <li className={styles.card}>
+          <p>{character.name}</p>
+          <div className={styles.bar}>
+            <div className={styles.emptybar}>
+              <div className={styles.filledbar}></div>
+            </div>
+          </div>
+          <img className={styles.imagebro} src={character.image} alt={character.name}/>
+        </li>
+      </Link>
     ));
     return (
       <div className="RMcharacters">
